@@ -19,21 +19,14 @@ def miller_rabin(n, b):
         s //= 2
     for b in basis:
         x = pow(b, s, n)
-
         if x == 1 or x == n - 1:
-            #print(b)
             continue
-        #print(n-1)
-
 
         for _ in range(r - 1):
             x = pow(x, 2, n)
-            #print("x:",x)
             if x == n - 1:
-                #print("abc")
                 break
         else:
-            #print(b)
             return False
     return True
 
@@ -47,15 +40,12 @@ def generate_basis(n):
 #
 def find_pseudoprime(limit_primes,coeff,numbit_p1=5,search_range_bit=20):
     bases=generate_basis(limit_primes)
-    #print(bases)
     list_a=[b * 4 for b in bases]
-    #print(list_a)
 
     list_Sa=[]
     for a in bases:
         S_a=[]
         for i in range(1,a*4):
-            #print("i:",i)
             if GCD(a*4,i)!=1:
                 continue
             
