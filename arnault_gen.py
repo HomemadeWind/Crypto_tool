@@ -153,12 +153,11 @@ if __name__ == '__main__':
     e.g limit_primes = 64 -> bypass [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61]
     coeff: coefficients of k1,k2 and k3
     k1 is always 1 while the rest need to be odd primes > limit_primes
+    search_range_bit: input range you want to search
+    e.g numbit_p1=200 and search_range_bit=100 -> search p1 in range [2**200,2**300]
     """
-    #print('abc')
     numbit_p1=200
     search_range_bit=100
     limit_primes=64
     coeff=[1,101,313]
     p=find_pseudoprime(limit_primes,coeff,numbit_p1,search_range_bit)
-
-    #print(p)
